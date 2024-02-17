@@ -5,12 +5,21 @@ See assignment-01.pdf for details.
 # no imports needed.
 
 def foo(x):
-    ### TODO
-    pass
+    if x <= 1:
+        return x
+    else:
+        return foo(x-1) + foo(x-2)
 
 def longest_run(mylist, key):
-    ### TODO
-    pass
+    current_run = 0
+    max_run = 0
+    for num in myarray:
+        if num == key:
+            current_run += 1
+            max_run = max(max_run, current_run)
+        else:
+            current_run = 0
+    return max_run
 
 
 class Result:
@@ -37,8 +46,18 @@ def to_value(v):
         return int(v)
         
 def longest_run_recursive(mylist, key):
-    ### TODO
-    pass
+    if not myarray:
+        return 0
+    mid = len(myarray) // 2
+    left_run = longest_run_recursive(myarray[:mid], key)
+    right_run = longest_run_recursive(myarray[mid+1:], key)
+    
+    middle_run = 1 if myarray[mid] == key else 0
+    
+    if middle_run == 0:
+        return max(left_run, right_run)
+    else:
+        return max(left_run, right_run, middle_run)
 
 
 
