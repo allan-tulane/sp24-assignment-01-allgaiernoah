@@ -12,35 +12,35 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 1. (2 pts ea) **Asymptotic notation** (12 pts)
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
-.  
+.  Yes, because 2^{n+1} only grows at most twice as fast as 2^n.
 .  
 .  
 .  
 . 
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
-.  
+.  No, because 2^{2^n} grows more and more when compared to 2^n. 
 .  
 .  
 .  
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
-.  
+.  Yes, because n^{1.01} doesn't grow as fast as {log}^2 n.
 .  
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
-.  
+.  No, because n^{1.01} grows more and more when compared to {log}^2 n. 
 .  
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
-.  
+.  Yes, because \sqrt{n} grows slower than ({log} n)^3.
 .  
 .  
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+.  No, because \sqrt{n} grows slower than ({log} n)^3. 
 
 
 2. **SPARC to Python** (12 pts)
@@ -61,7 +61,7 @@ $$
   - 2a. (6 pts) Translate this to Python code -- fill in the `def foo` method in `main.py`  
 
   - 2b. (6 pts) What does this function do, in your own words?  
-
+It gives you the fibonacci number that correlates to x. 
 .  
 .  
 .  
@@ -91,7 +91,8 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
   - 3a. (7 pts) First, implement an iterative, sequential version of `longest_run` in `main.py`.  
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
-
+The Work is the number of operations performed by the function and the Span is the longest number of 
+operations performed in a chain. Work = O(n) and Span = O(1)
 .  
 .  
 .  
@@ -106,7 +107,7 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
   - 3c. (7 pts) Next, implement a `longest_run_recursive`, a recursive, divide and conquer implementation. This is analogous to our implementation of `sum_list_recursive`. To do so, you will need to think about how to combine partial solutions from each recursive call. Make use of the provided class `Result`.   
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
-.  
+.  The Work = O(n) and the Span is O(\log n).
 .  
 .  
 .  
@@ -120,6 +121,11 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
+The Work = O(n) and the Span is O(\log n).
+. 
+.  
+.  
+.  
 
 .  
 .  
